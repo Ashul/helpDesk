@@ -1,0 +1,45 @@
+<div style="height: 100%;" >
+<navbar></navbar>
+  <div class="container-fluid" style="padding-top:50px;height: 100%">
+      <div class="row" style="height: 100%" ng-controller="dashboardController as dashbUser" ng-init="dashbUser.loadUser()">
+          <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 main-sidebar" >
+              <sidebar></sidebar>
+          </div>
+
+<div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 main-conent" ng-controller="ticketController as cTicket" ng-init="cTicket.getUser()">
+              <div class="m-head">
+              <div class="Q-head"> <h3>My Questions</h3></div>
+                   <div class="form-group type">
+                <select ng-model="myVar" class="form-control ">
+                <option style="display:none" value="">Select a question type</option>
+                <option value="open">open
+                <option value="closed">closed
+                </select>
+                   </div>
+                   </div>
+                   <div class="q-a">
+               <!--{{cTicket.myTicket}}-->
+               <div class="m-question" ng-switch="myVar" ng-repeat="data in cTicket.myTicket" class="question">
+                 <a href="#/my-ticket/{{data._id}}">
+                <div ng-switch-default ng-if="data.Qstatus == 'open'" class="question">
+                 <p> <span class="q"> Q </span> 
+                     <span class="Q-heading"> {{data.question}}</p>
+                    <p class="asked_by">Asked on {{data.created | date}} <span >Question Type : Open</span></p>
+                    </div>
+                    </a>
+
+                <a href="#/my-ticket/{{data._id}}">
+                <div ng-switch-when="closed" ng-if="data.Qstatus == 'closed'" class="question">
+                 <p> <span class="q"> Q </span> 
+                     <span class="Q-heading"> {{data.question}}</p>
+                    <!--<p>{{data.Qdetails}}</p>-->
+                    <p class="asked_by">Asked on {{data.created | date}} <span >Question Type : Closed</span></p>
+                    </div>
+                    </a>
+
+                   </div>
+
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+/*======================================
+ ======= Max width:320px  ==============
+======================================*/
+
+@media(max-width:320px){
+.user{width:112px;}
+.main-sidebar{
+    height: auto;
+    position:static;}
+.Q-head{width:100%}
+.type{width:100%}
+.asked_by span{float: left;display: block;width:100%}
+.mobile{display:none}
+   
+}
+
+
+/*======================================
+ === Min width:321px & max width:480px =
+======================================*/
+@media (min-width:321px)and (max-width:480px){
+.user{width:112px;}
+.main-sidebar{
+    height: auto;
+    position:static;}
+.Q-head{width:100%}
+.type{width:100%}
+.asked_by span{float: left;display: block;width:100%}
+.mobile{display:none}
+
+}
+
+/*======================================
+ === Min width:481px & max width:768px =
+======================================*/
+@media (min-width:481px)and (max-width:768px){
+.user{width:112px;}
+.main-page{height: auto; }
+.main-sidebar{
+    height: auto;
+    position:static;}
+.Q-head{width:100%}
+.type{width:100%}
+.asked_by span{float: left;display: block;width:100%}
+.mobile{display:none}
+
+}
+
+/*======================================
+ === Min width:769px & max width:992px =
+======================================*/
+
+@media (min-width:769px)and (max-width:992px){
+.type{width:30%}
+
+}
+
+/*======================================
+ == Min width:993px & max width:1200px =
+======================================*/
+
+@media(min-width:993px) and (max-width:1200px){
+
+.type{width:30%}
+}

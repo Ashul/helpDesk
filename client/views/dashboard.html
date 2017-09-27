@@ -1,0 +1,45 @@
+<div style="height: 100%;" >
+<navbar></navbar>
+  <div class="container-fluid" style="padding-top:50px;height: 100%">
+      <div class="row" style="height: 100%" ng-controller="dashboardController as dashbUser" ng-init="dashbUser.loadUser()">
+          <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 main-sidebar" >
+              <sidebar></sidebar>
+          </div>
+
+           <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 main-conent"  ng-controller="dashboardController as allTicket" ng-init="allTicket.loadAllTicket()">
+              <div class="m-head">
+              <div class="Q-head"> 
+                  <h3>All Questions</h3></div>
+                   <div class="form-group type">
+                <select ng-model="myVar" class="form-control ">
+                <option style="display:none" value="">Select a question type</option>
+                <option value="open">open
+                <option value="closed">closed
+                </select>
+                   </div>
+                   </div>
+                   <div class="q-a">
+                   <div class="m-question" ng-switch="myVar" ng-repeat="dataAll in allTicket.arrFromMyObj | orderBy: '-created' " >
+               <a href="#/my-ticket/{{dataAll._id}}">
+                <div ng-switch-default ng-if="dataAll.Qstatus == 'open'" class="question">
+                    <p> <span class="q"> Q </span>  
+                        <span class="Q-heading">{{dataAll.question}}
+                        </span></p>
+                    <p class="asked_by">Asked by - {{dataAll.firstName}} {{dataAll.lastName}} on {{dataAll.created | date}} <span >Question Type : Open</span></p>
+                     </div>
+                      </a>
+                      
+                    <a href="#/my-ticket/{{dataAll._id}}">
+                         <div ng-switch-when="closed" ng-if="dataAll.Qstatus == 'closed'" class="question">
+                    <p> <span class="q"> Q </span>  
+                        <span class="Q-heading">{{dataAll.question}}
+                        </span> </p>
+                    <p class="asked_by">Asked by - {{dataAll.firstName}} {{dataAll.lastName}} on {{dataAll.created | date}} <span > Question Type : Closed</span></p>
+                     </div>
+                      </a> 
+                       </div>
+                   </div>
+          </div>
+      </div>
+  </div>
+</div>

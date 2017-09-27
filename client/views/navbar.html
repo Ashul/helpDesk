@@ -1,0 +1,14 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div >
+      <a class="navbar-brand" href="#">Helpdesk</a>
+    </div>
+    <div class="col-xs-7 col-sm-3 col-md-2s col-lg-2 pull-right" ng-controller="dashboardController as dashbUser" ng-init="dashbUser.loadUser()">
+<span class="user" ><i class="fa fa-user" aria-hidden="true"></i>
+ {{dashbUser.user.firstName}} {{dashbUser.user.lastName}}</span>
+  <span  ng-click="dashbUser.logoutUser()" class="btn btn-danger logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
+</span>
+</div>
+
+  </div>
+</nav>

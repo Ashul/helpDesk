@@ -1,0 +1,28 @@
+<navbar></navbar>
+<div class="container-fluid" style="padding-top:50px;height: 100%">
+      <div class="row" style="height: 100%">
+          <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 main-sidebar" >
+              <sidebar></sidebar>
+          </div>
+ <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 main-conent">
+
+<div ng-controller="ticketController as cTicket" ng-init="cTicket.getUser()">
+<form  ng-submit="cTicket.createTicket()" >
+  <h3> Ask Your Question </h3>
+  <div class="form-group">
+    <label for="question">Question Title</label>
+    <input type="text" class="form-control"  ng-model="cTicket.question" required>
+  </div>
+  <div class="form-group">
+    <label for="Qdetails">Question Details</label>
+    <textarea  class="form-control" ng-model="cTicket.Qdetails" required></textarea>
+  </div>
+    <!--<div class="form-group">
+    <label for="file">Upload File</label>
+    <input type="file"  class="form-control" ng-model="cTicket.file">
+  </div>-->
+
+  <input type="submit" class="btn btn-success" value="Submit">
+</form>
+</div>
+                     </div></div></div>

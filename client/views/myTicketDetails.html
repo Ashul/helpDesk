@@ -1,0 +1,75 @@
+<div style="height: 100%;" >
+<navbar></navbar>
+  <div class="container-fluid" style="padding-top:50px;height: 100%">
+      <div class="row" style="height: 100%" ng-controller="dashboardController as dashbUser" ng-init="dashbUser.loadUser()">
+          <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 main-sidebar">
+              <sidebar></sidebar>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 main-conent" ng-controller="ticketController as cTicketDetails" ng-init="cTicketDetails.loadsingleTicket()">
+                <div ng-repeat="data in cTicketDetails.mysingleTicket" >
+                     <div ng-if="data.Qstatus == 'open'">
+                          <div class="Q_details">
+                               <div style="padding-left:0;" class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                   <h4> <span class="q"> Q </span> 
+                                   <span style="padding-top:10px;display:block"> {{data.question}}</span></h4>
+                                   <p><b>Details :</b> {{data.Qdetails}}</p>
+                               </div>
+                               <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                   <p class="asked_by" style="padding-top:10px;">Asked by -</br> {{data.firstName}} {{data.lastName}} on {{data.created | date}}</p>
+                                   <div ng-controller="dashboardController as dashbUser" ng-init="dashbUser.loadUser()">
+                                        <div ng-repeat="dataUser in dashbUser" >
+                                             <p ng-if=" dataUser.email == data.email"><a class="btn btn-primary" ng-click="cTicketDetails.cTicket()">Close this Question</a></p>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    <div ng-repeat="answer in data.answer">
+                         <div class="Q_details" style="border-bottom:1px solid #f0f0f0">
+                              <div style="padding-left:0;" class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                   <p> <b>Answer :</b>  {{answer.answer}}</p>
+                              </div>
+                              <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                   <p class="asked_by">Replied by - </br>{{answer.firstName}} {{answer.lastName}} on {{answer.createdAt | date}}</p>
+                             </div>
+                       </div>
+                  </div>
+
+
+                    <div style="padding-left:0;" class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+                        <form  ng-submit="cTicketDetails.getUserAnswer()" >
+                                <div class="form-group">
+                                <p>&nbsp;</p>
+                                <label for="answer">Answer this question:</label>
+                                <textarea ng-model="cTicketDetails.answer" class="form-control" required ></textarea>
+                            </div>
+                            <input type="submit" class="btn btn-success" value="Submit">
+                        </form>
+                </div>
+        </div>
+                   
+                                      
+                <div ng-if="data.Qstatus == 'closed'">
+                    <div class="Q_details">
+                         <div style="padding-left:0;" class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                               <h4> <span class="q"> Q </span> 
+                               <span style="padding-top:10px;display:block"> {{data.question}}</span></h4>
+                              <p><b>Details :</b> {{data.Qdetails}}</p>
+
+                         </div>
+                         <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                               <p class="asked_by" style="padding-top:10px;">Asked by - {{data.firstName}} {{data.lastName}} on {{data.created | date}}</p>
+                         </div>
+                    </div>
+                    <div ng-repeat="answer in data.answer">
+                         <div class="Q_details" style="border-bottom:1px solid #f0f0f0">
+                             <div style="padding-left:0;" class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                             <p> <b>Answer :</b>  {{answer.answer}}</p>
+                             </div>
+                             <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                                 <p class="asked_by">Replied by - {{answer.firstName}} {{answer.lastName}} on {{answer.createdAt | date}}</p>
+                             </div>
+                       </div>
+                  </div>
+           </div>
+</div>
+</div>

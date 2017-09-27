@@ -1,0 +1,29 @@
+<div class="main-page">
+<div class="container fade-l" ng-controller="loginController as logUser">
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mobile ">
+    <h1>Helpdesk </h1>
+    <p><span style="font-size:15px">Ticket Based Support System</span></p>
+    
+    <h3>Having issues? Generate A Ticket.</h3>
+  </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 login-form">
+<form  ng-submit="logUser.loginUser()" >
+  <h2 style="color:#16f3ca"> Login</h2>
+  <hr/>
+  <div class="form-group">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email" ng-model="logUser.email" required>
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="password" class="form-control" id="pwd" ng-model="logUser.password" required>
+  </div>
+  <input type="submit" class="btn btn-success" value="Submit">
+</form>
+<div class="signup-home">
+  <p>Don't have a account?</br><a href="#/signup"><i class="fa fa-sign-in" aria-hidden="true"></i>
+ Signup</a></p>
+</div>
+  </div>
+</div>
+</div>
