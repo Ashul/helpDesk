@@ -1,9 +1,124 @@
-Project -Ticket based support system
-It is a Single Page application with separate backend and frontend.
-Frontend Technologies used - HTML 5, CSS, Javascript , AngularJs.
-Backend Technologies used - NodeJs, ExpressJS, MongoDB.
-After successful login, You can raise your Question that will be displayed on dashboard page.
-when you click on the question, it will show the details. One can answer the question from detail page.
-if you get the correct answer, you can closed it, a notifiction mail will be sent to your email.
-and a notification mail will also b sent, when you answer the question
+
+Project Name - Ticket Based Support system using MEAN Stack
+
+A generic ticket based support system for resolving queries on a
+platform
+
+Project Description -
+
+Support is an essent
+ial feature for any platform, and dedicated support is
+best approach in ca
+se you are really concerned about the user experience
+of your platform.
+
+ The Aim of the proj
+ect is to create an online ticket based support system,
+just like the one prese
+nt on edwisor.com which should be usable by any
+kind of platform to ge
+t support queries from their users and resolve them.
+
+This project should be a Single Page application with separate backend and
+frontend. The backend should have REST APIs with proper documentation. Take
+documentation from your previous project as reference.
+
+You are allowed to use any kind of angular module, libraries or tool you want.
+APIs have to be developed by you.
+
+Frontend Technologies allowed - HTML 5, CSS, Javascript , Jquery and
+AngularJS
+
+Backend Technologies allowed - NodeJs, ExpressJS, MongoDB.
+
+You are free to use any libraries/modules in backend and frontend both.
+
+Features of the platform
+ -
+ 
+1)
+Ticket Raising panel - User facing
+
+2)
+Ticket Resolution panel - Admin
+
+1)
+Ticket Raising
+ panel - user end
+ 
+a)
+A view to
+ login and Signup.
+ 
+b)
+A View to
+ create a ticket. Get all the necessary information like
+name, ema
+il, phone number, Query title and Query details. 
+
+​
+File
+upload 
+is optional.
+
+c)
+A View to
+ view all queries raised by the person.
+ 
+d)
+A view to
+ show the details of a particular query. It should
+include 
+the original question as well as the answer from admin
+and perso
+n in form of a conversation (chat like UI). This view
+should a
+lso have the option to set the status of the ticket to
+‘open’ or 
+‘closed’ depending on whether the query is resolved or
+not.
+
+2) Ticket Resolution
+ Panel - Admin end
+ 
+a)
+View to Display 
+ticket by status - This should list all tickets received
+by the support
+ system. There should be a drop down menu to filter
+through the sta
+tus of ticket. Ticket can be of status ‘open’ or ‘closed’
+depending on 
+whether the query is resolved or not.
+
+b)
+A view to show
+ the details of a particular query. It should include the
+original questi
+on as well as the answer from admin and person in
+form of a conve
+rsation (chat like UI). This view should also have the
+option to set th
+e status of the ticket to ‘open’ or ‘closed’ depending on
+whether the qu
+ery is resolved or not. The answer created here
+
+Additional Features
+ -
+1)
+On Status chan
+ge of ticket, the person should receive an email
+notification.
+
+2)
+When the per
+son receives the answer or the admin receives the
+reply, an emai
+l notification should be sent to the person concerned.
+
+3)
+For the sake o
+f simplicity, treat the Admin as a user of the system.
+Don’t create s
+pecial backend for admin.
 
